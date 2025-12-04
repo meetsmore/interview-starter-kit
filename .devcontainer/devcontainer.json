@@ -1,0 +1,23 @@
+{
+  "name": "interview-starter-kit",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "vscode",
+  "containerEnv": {
+    "TZ": "Asia/Tokyo"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/aws-cli:1": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "nodeGypDependencies": true,
+      "installYarnUsingApt": false
+    }
+  },
+  "runArgs": ["--init", "--network=host", "--name=interview-starter-kit"],
+  "postCreateCommand": ".devcontainer/init.sh",
+  "postStartCommand": ".devcontainer/start.sh"
+}
