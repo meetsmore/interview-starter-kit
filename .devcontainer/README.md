@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This DevContainer provides a **ready-to-use development environment** for the MeetsMore SRE interview exercise. It eliminates the "works on my machine" problem by giving you a pre-configured Ubuntu container with all the tools you need already installed.
+This DevContainer provides a **ready-to-use development environment** for the MeetsMore interview exercise. It eliminates the "works on my machine" problem by giving you a pre-configured Ubuntu container with all the tools you need already installed.
 
 **What you get:**
 - ✅ No manual tool installation required
@@ -35,6 +35,7 @@ After the container starts, open a new terminal in VS Code and run:
 ```bash
 # Start the app
 cd app
+pnpm install
 pnpm dev
 ```
 
@@ -43,17 +44,16 @@ Open your browser to **http://localhost:3000** - you should see a congratulation
 ## What's Included
 
 **Runtime & Tools:**
-- Node.js 25.2.1 + TypeScript
-- pnpm 10.23.0 (fast package manager)
+- Node.js + TypeScript
+- pnpm
 - Docker (shared with host - no Docker-in-Docker overhead)
-- kubectl (Kubernetes CLI)
-- Helm (Kubernetes package manager)
+- kubectl
+- Helm
 - GitHub CLI
+- AWS CLI
 
 **Auto-configured:**
-- SSH keys mounted from `~/.ssh`
 - Timezone: Asia/Tokyo
-- Git editor: Vim
 - Host network mode (easy localhost access)
 
 **Note:** Docker uses your host's Docker daemon - images you build are visible on your host machine!
@@ -72,5 +72,5 @@ Want to modify the devcontainer? Edit these files:
 
 - 🐳 Docker images built in the container are visible on your host machine
 - 🌐 The app on `localhost:3000` is accessible from both container and host
-- 🔑 SSH keys work automatically - no need to configure Git credentials
 - 📦 Use `gh` CLI for GitHub operations: `gh pr create`, `gh workflow run`, etc.
+- ☁️ AWS CLI is pre-installed - configure with `aws configure` or mount your `~/.aws` credentials
