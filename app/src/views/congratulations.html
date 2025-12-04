@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevContainer Success!</title>
+  <link rel="icon" type="image/x-icon" href="https://meetsmore.com/favicon.ico">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 800px;
+      width: 100%;
+      padding: 40px;
+      animation: slideUp 0.5s ease-out;
+    }
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .success-icon {
+      font-size: 64px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      color: #667eea;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #666;
+      font-size: 1.2em;
+    }
+    .info-section {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .info-section h2 {
+      color: #667eea;
+      font-size: 1.3em;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .info-item {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+    }
+    .info-item strong {
+      display: block;
+      color: #667eea;
+      margin-bottom: 5px;
+      font-size: 0.9em;
+    }
+    .info-item span {
+      color: #333;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95em;
+    }
+    .endpoints {
+      list-style: none;
+      margin-top: 15px;
+    }
+    .endpoints li {
+      background: white;
+      padding: 12px 15px;
+      margin: 8px 0;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .endpoints a {
+      color: #667eea;
+      text-decoration: none;
+      font-family: 'Courier New', monospace;
+      font-weight: 600;
+    }
+    .endpoints a:hover {
+      text-decoration: underline;
+    }
+    .next-steps {
+      background: #e8f4f8;
+      border-left: 4px solid #17a2b8;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .next-steps h3 {
+      color: #17a2b8;
+      margin-bottom: 15px;
+    }
+    .next-steps ol {
+      margin-left: 20px;
+    }
+    .next-steps li {
+      margin: 8px 0;
+      color: #555;
+    }
+    .next-steps code {
+      background: rgba(0, 0, 0, 0.05);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+    .next-steps-cta {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 15px;
+      padding: 30px;
+      margin: 30px 0;
+      text-align: center;
+      color: white;
+    }
+    .next-steps-cta h2 {
+      color: white;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+    .next-steps-cta p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      opacity: 0.95;
+    }
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: #667eea;
+      padding: 15px 40px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2em;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #999;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="success-icon">🎉</div>
+      <h1>Congratulations!</h1>
+      <p class="subtitle">Your DevContainer is up and running!</p>
+    </div>
+
+    <div class="info-section">
+      <h2>🐳 Environment Info</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <strong>Node.js</strong>
+          <span>{{nodeVersion}}</span>
+        </div>
+        <div class="info-item">
+          <strong>Platform</strong>
+          <span>{{platform}}</span>
+        </div>
+        <div class="info-item">
+          <strong>Architecture</strong>
+          <span>{{arch}}</span>
+        </div>
+        <div class="info-item">
+          <strong>Port</strong>
+          <span>{{port}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>🛠️ Installed Tools</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <strong>kubectl</strong>
+          <span>{{kubectlVersion}}</span>
+        </div>
+        <div class="info-item">
+          <strong>Helm</strong>
+          <span>{{helmVersion}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>🚀 Available Endpoints</h2>
+      <ul class="endpoints">
+        <li>
+          <span>Health Check</span>
+          <a href="/health" target="_blank">/health</a>
+        </li>
+        <li>
+          <span>Metrics (Prometheus)</span>
+          <a href="/metrics" target="_blank">/metrics</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>MeetsMore SRE Interview • HonoJS • Running in DevContainer</p>
+    </div>
+  </div>
+</body>
+</html>

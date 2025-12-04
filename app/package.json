@@ -1,0 +1,30 @@
+{
+  "name": "meetsmore-interview",
+  "version": "0.0.1",
+  "description": "HonoJS Hello World Application for DevOps Interview",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": [
+    "meetsmore",
+    "interview",
+    "hono",
+    "api",
+    "devops"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@hono/node-server": "^1.19.6",
+    "hono": "^4.10.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
