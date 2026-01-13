@@ -1,11 +1,13 @@
 {
   "name": "interview-starter-kit",
   "build": {
-    "dockerfile": "Dockerfile"
+    "dockerfile": "Dockerfile",
   },
   "remoteUser": "vscode",
   "containerEnv": {
-    "TZ": "Asia/Tokyo"
+    "TZ": "Asia/Tokyo",
+    "AWS_ACCESS_KEY_ID": "placeholder",
+    "AWS_SECRET_ACCESS_KEY": "placeholder",
   },
   "features": {
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
@@ -14,10 +16,10 @@
     "ghcr.io/devcontainers/features/aws-cli:1": {},
     "ghcr.io/devcontainers/features/node:1": {
       "nodeGypDependencies": true,
-      "installYarnUsingApt": false
-    }
+      "installYarnUsingApt": false,
+    },
   },
   "runArgs": ["--init", "--network=host", "--name=interview-starter-kit"],
   "postCreateCommand": ".devcontainer/init.sh",
-  "postStartCommand": ".devcontainer/start.sh"
+  "postStartCommand": ".devcontainer/start.sh",
 }
