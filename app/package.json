@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@hono/node-server": "^2.0.4",
-    "hono": "^4.12.23"
+    "hono": "^4.12.25"
   },
   "devDependencies": {
     "@tsconfig/node24": "^24.0.0",
